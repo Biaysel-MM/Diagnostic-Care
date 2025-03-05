@@ -24,9 +24,6 @@ html {
     font-size: 16px;
     font-family: inter;
 }
-.none{
-    display: none !important;
-}
 /* menu principal */
 #nav {
     display: flex;
