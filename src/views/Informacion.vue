@@ -63,23 +63,24 @@
 
 <script setup>
 import { ref } from 'vue'
+import { img } from '../utils/paths'
 import DiseaseCard from '../components/DiseaseCard.vue'
 
 const currentSlide = ref(1)
 const recommendation = ref('')
-const slides = ['/Imagenes/analisis-1.png', '/Imagenes/analisis-2.jpg', '/Imagenes/analisis-3.jpg']
+const slides = [img('/Imagenes/analisis-1.png'), img('/Imagenes/analisis-2.jpg'), img('/Imagenes/analisis-3.jpg')]
 
 setInterval(() => {
   currentSlide.value = currentSlide.value >= 3 ? 1 : currentSlide.value + 1
 }, 5000)
 
 const diseases = [
-  { id: 'resfriado', name: 'Resfriado', image: '/Imagenes/resfriado.png', description: 'Infección viral leve que afecta la nariz y la garganta. Causa estornudos, congestión y malestar general.', severity: 'Leve' },
-  { id: 'gripe', name: 'Gripe', image: '/Imagenes/gripe.png', description: 'Infección viral respiratoria que causa fiebre, escalofríos, dolor muscular y fatiga intensa.', severity: 'Moderada' },
-  { id: 'migrana', name: 'Migraña', image: '/Imagenes/migraña.png', description: 'Dolor de cabeza intenso y pulsátil acompañado de náuseas y sensibilidad a la luz y al sonido.', severity: 'Moderada' },
-  { id: 'gastritis', name: 'Gastritis', image: '/Imagenes/gastritis.png', description: 'Inflamación del revestimiento del estómago que causa ardor, dolor abdominal y náuseas.', severity: 'Moderada' },
-  { id: 'asma', name: 'Asma', image: '/Imagenes/asma.png', description: 'Enfermedad crónica que inflama las vías respiratorias causando sibilancias y dificultad para respirar.', severity: 'Crónica' },
-  { id: 'diabetes', name: 'Diabetes', image: '/Imagenes/diabetes.png', description: 'Trastorno metabólico caracterizado por niveles elevados de glucosa en sangre.', severity: 'Crónica' },
+  { id: 'resfriado', name: 'Resfriado', image: img('/Imagenes/resfriado.png'), description: 'Infección viral leve que afecta la nariz y la garganta. Causa estornudos, congestión y malestar general.', severity: 'Leve' },
+  { id: 'gripe', name: 'Gripe', image: img('/Imagenes/gripe.png'), description: 'Infección viral respiratoria que causa fiebre, escalofríos, dolor muscular y fatiga intensa.', severity: 'Moderada' },
+  { id: 'migrana', name: 'Migraña', image: img('/Imagenes/migraña.png'), description: 'Dolor de cabeza intenso y pulsátil acompañado de náuseas y sensibilidad a la luz y al sonido.', severity: 'Moderada' },
+  { id: 'gastritis', name: 'Gastritis', image: img('/Imagenes/gastritis.png'), description: 'Inflamación del revestimiento del estómago que causa ardor, dolor abdominal y náuseas.', severity: 'Moderada' },
+  { id: 'asma', name: 'Asma', image: img('/Imagenes/asma.png'), description: 'Enfermedad crónica que inflama las vías respiratorias causando sibilancias y dificultad para respirar.', severity: 'Crónica' },
+  { id: 'diabetes', name: 'Diabetes', image: img('/Imagenes/diabetes.png'), description: 'Trastorno metabólico caracterizado por niveles elevados de glucosa en sangre.', severity: 'Crónica' },
 ]
 
 function submitRecommendation() {

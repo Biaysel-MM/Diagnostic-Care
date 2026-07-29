@@ -13,7 +13,7 @@
               <div class="absolute top-0 right-0 w-32 h-32 bg-primary-light rounded-bl-full -mr-10 -mt-10 opacity-50"></div>
               <div class="relative">
                 <div class="w-16 h-16 rounded-2xl bg-linear-to-br from-primary-light to-blue-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <img src="/Imagenes/basico.png" alt="Básico" class="w-8 h-8">
+                  <img :src="img('/Imagenes/basico.png')" alt="Básico" class="w-8 h-8">
                 </div>
                 <h2 class="text-2xl font-bold text-accent mb-3">Análisis Básico</h2>
                 <p class="text-muted text-sm leading-relaxed mb-6">Ingresa tus síntomas de forma sencilla y obtén resultados inmediatos. Ideal para consultas rápidas.</p>
@@ -35,7 +35,7 @@
               <div class="absolute top-0 right-0 w-32 h-32 bg-cyan-50 rounded-bl-full -mr-10 -mt-10 opacity-50"></div>
               <div class="relative">
                 <div class="w-16 h-16 rounded-2xl bg-linear-to-br from-cyan-50 to-blue-50 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <img src="/Imagenes/profundo.png" alt="Profundo" class="w-8 h-8">
+                  <img :src="img('/Imagenes/profundo.png')" alt="Profundo" class="w-8 h-8">
                 </div>
                 <h2 class="text-2xl font-bold text-accent mb-3">Análisis Profundo</h2>
                 <p class="text-muted text-sm leading-relaxed mb-6">Formulario detallado con información completa para un diagnóstico más preciso y personalizado.</p>
@@ -56,3 +56,7 @@
     </section>
   </div>
 </template>
+
+<script setup>
+import { img } from '../utils/paths'
+</script>

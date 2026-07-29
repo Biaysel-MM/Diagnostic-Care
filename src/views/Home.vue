@@ -30,7 +30,7 @@
           <div class="hidden lg:flex justify-center">
             <div class="relative w-96 h-96">
               <div class="absolute inset-0 bg-linear-to-br from-primary/20 to-secondary/20 rounded-full animate-pulse"></div>
-              <img src="/Imagenes/img-hero.png" alt="Diagnóstico médico" class="relative w-full h-full object-contain drop-shadow-2xl">
+              <img :src="img('/Imagenes/img-hero.png')" alt="Diagnóstico médico" class="relative w-full h-full object-contain drop-shadow-2xl">
             </div>
           </div>
         </div>
@@ -47,7 +47,7 @@
         <div class="grid md:grid-cols-2 gap-8">
           <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 shadow-sm">
             <div class="w-14 h-14 rounded-xl bg-linear-to-br from-primary-light to-sky-50 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
-              <img src="/Imagenes/basico.png" alt="Básico" class="w-7 h-7">
+              <img :src="img('/Imagenes/basico.png')" alt="Básico" class="w-7 h-7">
             </div>
             <h3 class="text-xl font-bold text-accent mb-2">Análisis Básico</h3>
             <p class="text-muted text-sm leading-relaxed mb-5">Ingresa tus síntomas de forma rápida y obtén resultados inmediatos con gráficos claros y fáciles de entender.</p>
@@ -58,13 +58,13 @@
           </div>
           <div class="bg-white rounded-2xl p-8 border border-gray-100 hover:border-secondary/30 hover:shadow-xl hover:shadow-secondary/5 transition-all duration-300 shadow-sm">
             <div class="w-14 h-14 rounded-xl bg-linear-to-br from-cyan-50 to-sky-50 flex items-center justify-center mb-5 transition-transform duration-300">
-              <img src="/Imagenes/profundo.png" alt="Profundo" class="w-7 h-7">
+              <img :src="img('/Imagenes/profundo.png')" alt="Profundo" class="w-7 h-7">
             </div>
             <h3 class="text-xl font-bold text-accent mb-2">Análisis Profundo</h3>
             <p class="text-muted text-sm leading-relaxed mb-5">Completa un formulario detallado con edad, sexo, presión arterial y más, para un diagnóstico más preciso y personalizado.</p>
             <router-link to="/profundo" class="inline-flex items-center gap-1.5 text-sm font-semibold text-secondary hover:text-cyan-700 transition-colors no-underline">
               Ir al análisis
-              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
             </router-link>
           </div>
         </div>
@@ -104,14 +104,15 @@
 </template>
 
 <script setup>
+import { img } from '../utils/paths'
 import DiseaseCard from '../components/DiseaseCard.vue'
 
 const diseases = [
-  { id: 'resfriado', name: 'Resfriado', image: '/Imagenes/resfriado.png', description: 'Infección viral leve que afecta la nariz y garganta. Causa estornudos, congestión y malestar general.', severity: 'Leve' },
-  { id: 'gripe', name: 'Gripe', image: '/Imagenes/gripe.png', description: 'Infección viral respiratoria con fiebre, escalofríos, dolor muscular y fatiga intensa.', severity: 'Moderada' },
-  { id: 'migrana', name: 'Migraña', image: '/Imagenes/migraña.png', description: 'Dolor de cabeza intenso y pulsátil, acompañado de náuseas y sensibilidad a la luz.', severity: 'Moderada' },
-  { id: 'gastritis', name: 'Gastritis', image: '/Imagenes/gastritis.png', description: 'Inflamación del revestimiento del estómago que causa ardor, dolor y náuseas.', severity: 'Moderada' },
-  { id: 'asma', name: 'Asma', image: '/Imagenes/asma.png', description: 'Enfermedad crónica que inflama las vías respiratorias causando sibilancias y falta de aire.', severity: 'Crónica' },
-  { id: 'diabetes', name: 'Diabetes', image: '/Imagenes/diabetes.png', description: 'Trastorno metabólico con niveles elevados de glucosa en sangre.', severity: 'Crónica' },
+  { id: 'resfriado', name: 'Resfriado', image: img('/Imagenes/resfriado.png'), description: 'Infección viral leve que afecta la nariz y garganta. Causa estornudos, congestión y malestar general.', severity: 'Leve' },
+  { id: 'gripe', name: 'Gripe', image: img('/Imagenes/gripe.png'), description: 'Infección viral respiratoria con fiebre, escalofríos, dolor muscular y fatiga intensa.', severity: 'Moderada' },
+  { id: 'migrana', name: 'Migraña', image: img('/Imagenes/migraña.png'), description: 'Dolor de cabeza intenso y pulsátil, acompañado de náuseas y sensibilidad a la luz.', severity: 'Moderada' },
+  { id: 'gastritis', name: 'Gastritis', image: img('/Imagenes/gastritis.png'), description: 'Inflamación del revestimiento del estómago que causa ardor, dolor y náuseas.', severity: 'Moderada' },
+  { id: 'asma', name: 'Asma', image: img('/Imagenes/asma.png'), description: 'Enfermedad crónica que inflama las vías respiratorias causando sibilancias y falta de aire.', severity: 'Crónica' },
+  { id: 'diabetes', name: 'Diabetes', image: img('/Imagenes/diabetes.png'), description: 'Trastorno metabólico con niveles elevados de glucosa en sangre.', severity: 'Crónica' },
 ]
 </script>
